@@ -7,13 +7,13 @@ const loader = (loading) => { }
 // 注册的名称，拿取的资源，注入到哪里去，激活条件，加载的loading
 registerMicroApps([{
     name: 'm-vue',
-    entry: '//loaclhost:20000',
+    entry: '//localhost:20000',
     container: '#container',
     activeRule: '/vue',
     loader
 }, {
     name: 'm-react',
-    entry: '//loaclhost:30000',
+    entry: '//localhost:30000',
     container: '#container',
     activeRule: '/react',
     loader
@@ -37,4 +37,8 @@ registerMicroApps([{
 
 
 // 开启
-start()
+start({
+    sandbox: {
+        experimentalStyleIsolation:true
+    }
+})
